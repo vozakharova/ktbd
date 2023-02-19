@@ -27,3 +27,10 @@ services:
       context: ./docker/php
     volumes:
       - './src:/var/www/html'
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_HOST=mysql
